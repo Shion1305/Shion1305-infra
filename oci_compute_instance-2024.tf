@@ -109,13 +109,5 @@ resource "oci_core_instance" "instance-2024" {
     ocpus                     = 2
     vcpus                     = 2
   }
-  source_details {
-    boot_volume_size_in_gbs         = jsonencode(47)
-    boot_volume_vpus_per_gb         = jsonencode(10)
-    is_preserve_boot_volume_enabled = false
-    kms_key_id                      = null
-    source_id                       = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaakvvs6sht2as6cdewuliqamyqd27xvq2xupyxr3zkuf7appulcqeq"
-    source_type                     = "image"
-  }
 }
 
