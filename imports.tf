@@ -42,3 +42,8 @@ import {
   id = "ocid1.internetgateway.oc1.ap-tokyo-1.aaaaaaaaw3dtysi3sctisyiqic4jxduykrhke2eo6dafwrgoqqbpzgung6ma"
   to = oci_core_internet_gateway.main-internet-gateway
 }
+
+import {
+  id = "ocid1.dhcpoptions.oc1.ap-tokyo-1.aaaaaaaavdzkksyupctnoqbj2hpo6w63vxtgx227o7hv52kl4nru6bcjvfwa"
+  to = oci_core_dhcp_options.main-dhcp-options
+}

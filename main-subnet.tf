@@ -6,7 +6,7 @@ resource "oci_core_subnet" "main-subnet" {
     "Oracle-Tags.CreatedBy" = "shion1305@gmail.com"
     "Oracle-Tags.CreatedOn" = "2021-11-10T01:32:17.816Z"
   }
-  dhcp_options_id            = "ocid1.dhcpoptions.oc1.ap-tokyo-1.aaaaaaaavdzkksyupctnoqbj2hpo6w63vxtgx227o7hv52kl4nru6bcjvfwa"
+  dhcp_options_id            = oci_core_dhcp_options.main-dhcp-options.id
   display_name               = "subnet-20211110-1031"
   dns_label                  = "subnet11101032"
   freeform_tags              = {}
