@@ -6,7 +6,7 @@ resource "oci_core_route_table" "main-route-table" {
   }
   display_name  = "Default Route Table for vcn-20211110-1031"
   freeform_tags = {}
-  vcn_id        = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyavaoppezgphkllmrizfar3ycecg7phwvws4ceipafbdra"
+  vcn_id        = oci_core_vcn.main-vcn.id
   route_rules {
     description       = null
     destination       = "0.0.0.0/0"

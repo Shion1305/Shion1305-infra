@@ -32,3 +32,8 @@ import {
   id = "ocid1.routetable.oc1.ap-tokyo-1.aaaaaaaa5pv27xf72rg4p54tenysrpi7rzsvmu7laetwnikkmzdbevhmz4la"
   to = oci_core_route_table.main-route-table
 }
+
+import {
+  id = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyavaoppezgphkllmrizfar3ycecg7phwvws4ceipafbdra"
+  to = oci_core_vcn.main-vcn
+}

@@ -6,7 +6,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   display_name  = "Default Security List for vcn-20211110-1031"
   freeform_tags = {}
-  vcn_id        = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyavaoppezgphkllmrizfar3ycecg7phwvws4ceipafbdra"
+  vcn_id        = oci_core_vcn.main-vcn.id
   egress_security_rules {
     description      = null
     destination      = "0.0.0.0/0"

@@ -16,5 +16,5 @@ resource "oci_core_subnet" "main-subnet" {
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.main-route-table.id
   security_list_ids          = [oci_core_security_list.main-security-list.id]
-  vcn_id                     = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyavaoppezgphkllmrizfar3ycecg7phwvws4ceipafbdra"
+  vcn_id                     = oci_core_vcn.main-vcn.id
 }
