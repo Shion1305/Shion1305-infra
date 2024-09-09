@@ -88,7 +88,7 @@ resource "oci_core_instance" "instance-2024" {
     nsg_ids                = []
     private_ip             = "10.0.0.240"
     skip_source_dest_check = false
-    subnet_id              = "ocid1.subnet.oc1.ap-tokyo-1.aaaaaaaaneghxjqpturxbnptzpcf44egzgd2gzg3el2oxyum2lj3ygczbkeq"
+    subnet_id              = oci_core_subnet.main-subnet.id
     vlan_id                = null
   }
   instance_options {
