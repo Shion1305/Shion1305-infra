@@ -14,7 +14,7 @@ resource "oci_core_subnet" "main-subnet" {
   ipv6cidr_blocks            = []
   prohibit_internet_ingress  = false
   prohibit_public_ip_on_vnic = false
-  route_table_id             = "ocid1.routetable.oc1.ap-tokyo-1.aaaaaaaa5pv27xf72rg4p54tenysrpi7rzsvmu7laetwnikkmzdbevhmz4la"
+  route_table_id             = oci_core_route_table.main-route-table.id
   security_list_ids          = [oci_core_security_list.main-security-list.id]
   vcn_id                     = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyavaoppezgphkllmrizfar3ycecg7phwvws4ceipafbdra"
 }
