@@ -22,3 +22,8 @@ import {
   id = "ocid1.tenancy.oc1..aaaaaaaa57p4zuoumu3dkeasy3zuom3ouhmxwdk3eo3frkdmvtkpc4nvkqdq"
   to = oci_identity_compartment.main-compartment
 }
+
+import {
+  id = "ocid1.securitylist.oc1.ap-tokyo-1.aaaaaaaa55cshiuxh35trjx2r5bmm2jfnqevn4f4s56kt54bu2q27nxal4sa"
+  to = oci_core_security_list.main-security-list
+}
