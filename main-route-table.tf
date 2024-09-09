@@ -11,7 +11,7 @@ resource "oci_core_route_table" "main-route-table" {
     description       = null
     destination       = "0.0.0.0/0"
     destination_type  = "CIDR_BLOCK"
-    network_entity_id = "ocid1.internetgateway.oc1.ap-tokyo-1.aaaaaaaaw3dtysi3sctisyiqic4jxduykrhke2eo6dafwrgoqqbpzgung6ma"
+    network_entity_id = oci_core_internet_gateway.main-internet-gateway.id
     route_type        = null
   }
 }
