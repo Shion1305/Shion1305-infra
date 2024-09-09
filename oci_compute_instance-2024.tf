@@ -3,7 +3,7 @@ resource "oci_core_instance" "instance-2024" {
   availability_domain        = "kbTA:AP-TOKYO-1-AD-1"
   capacity_reservation_id    = null
   cluster_placement_group_id = null
-  compartment_id             = "ocid1.tenancy.oc1..aaaaaaaa57p4zuoumu3dkeasy3zuom3ouhmxwdk3eo3frkdmvtkpc4nvkqdq"
+  compartment_id             = oci_identity_compartment.main-compartment.id
   compute_cluster_id         = null
   dedicated_vm_host_id       = null
   defined_tags = {

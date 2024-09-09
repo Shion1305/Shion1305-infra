@@ -1,7 +1,7 @@
 resource "oci_core_subnet" "main-subnet" {
   availability_domain = null
   cidr_block          = "10.0.0.0/24"
-  compartment_id      = "ocid1.tenancy.oc1..aaaaaaaa57p4zuoumu3dkeasy3zuom3ouhmxwdk3eo3frkdmvtkpc4nvkqdq"
+  compartment_id      = oci_identity_compartment.main-compartment.id
   defined_tags = {
     "Oracle-Tags.CreatedBy" = "shion1305@gmail.com"
     "Oracle-Tags.CreatedOn" = "2021-11-10T01:32:17.816Z"
