@@ -15,6 +15,7 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
+      pull-requests: 'write'
     env:
       TF_VAR_oci_user: ${{ secrets.OCI_USER }}
       TF_VAR_oci_tenancy: ${{ secrets.OCI_TENANCY }}
