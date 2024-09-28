@@ -28,7 +28,7 @@ jobs:
           workload_identity_provider: 'projects/434221497215/locations/global/workloadIdentityPools/default/providers/provider-github'
           service_account: 'gh-actions@shion1305-infra.iam.gserviceaccount.com'
       - name: save private key
-        run: echo "${{ secrets.OCI_PRIVATE_KEY }}" > ./oci/private_key.pem
+        run: echo "${{ secrets.OCI_KEY_CONTENT }}" > ./oci/private_key.pem
       - name: Set up Aqua CLI
         uses: aquaproj/aqua-installer@v3.0.1
         with:
