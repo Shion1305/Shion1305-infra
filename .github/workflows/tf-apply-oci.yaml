@@ -1,4 +1,4 @@
-name: Run Plan on OCI
+name: Run Apply on OCI
 on:
   push:
     branches:
