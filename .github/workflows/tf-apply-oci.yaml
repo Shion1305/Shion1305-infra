@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'oci/**'
+  workflow_dispatch:
 jobs:
   run-terragrunt-apply:
     runs-on: ubuntu-latest
