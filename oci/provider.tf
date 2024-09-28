@@ -1,11 +1,11 @@
-variable "region" {
+variable "oci_region" {
   default = "ap-toyko-1"
 }
 
-variable "user" {}
-variable "fingerprint" {}
-variable "tenancy" {}
-variable "key_file" {}
+variable "oci_user" {}
+variable "oci_fingerprint" {}
+variable "oci_tenancy" {}
+variable "oci_private_key_path" {}
 
 terraform {
   required_providers {
@@ -17,9 +17,9 @@ terraform {
 }
 
 provider "oci" {
-  region           = var.region
-  tenancy_ocid     = var.tenancy
-  user_ocid        = var.user
-  fingerprint      = var.fingerprint
-  private_key_path = var.key_file
+  region           = var.oci_region
+  tenancy_ocid     = var.oci_tenancy
+  user_ocid        = var.oci_user
+  fingerprint      = var.oci_fingerprint
+  private_key_path = var.oci_private_key_path
 }
