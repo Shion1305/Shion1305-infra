@@ -1,0 +1,43 @@
+name: Run Plan on OCI
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'oci/**'
+jobs:
+  run-terragrunt-apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      pull-requests: 'write'
+    env:
+      TF_VAR_oci_user: ${{ secrets.OCI_USER }}
+      TF_VAR_oci_tenancy: ${{ secrets.OCI_TENANCY }}
+      TF_VAR_oci_fingerprint: ${{ secrets.OCI_FINGERPRINT }}
+      TF_VAR_oci_region: ${{ secrets.OCI_REGION }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: 'google-github-actions/auth@v2'
+        with:
+          project_id: 'shion1305-infra'
+          workload_identity_provider: 'projects/434221497215/locations/global/workloadIdentityPools/default/providers/provider-github'
+          service_account: 'gh-actions@shion1305-infra.iam.gserviceaccount.com'
+      - name: save private key
+        run: echo "${{ secrets.OCI_KEY_CONTENT }}" > ./oci/private_key.pem
+      - name: Set up Aqua CLI
+        uses: aquaproj/aqua-installer@v3.0.1
+        with:
+          aqua_version: v2.35.0
+      - name: Terragrunt Init
+        working-directory: ./oci
+        run: terragrunt init
+      - name: Terragrunt Plan
+        working-directory: ./oci
+        env:
+          TF_VAR_oci_private_key_path: ./private_key.pem
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod 755 $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
+          terragrunt run-all apply --terragrunt-non-interactive --terragrunt-tfpath $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
