@@ -1,7 +1,7 @@
-import {
-  id = "ocid1.instance.oc1.ap-tokyo-1.anxhiljrqiqkkcyczz334sybim34zrcx2gkrqizqaeyryiiygpjgiiizunwa"
-  to = oci_core_instance.isucon-1
-}
+# import {
+#   id = "ocid1.instance.oc1.ap-tokyo-1.anxhiljrqiqkkcyczz334sybim34zrcx2gkrqizqaeyryiiygpjgiiizunwa"
+#   to = oci_core_instance.isucon-1
+# }
 
 import {
   id = "ocid1.vcn.oc1.ap-tokyo-1.amaaaaaaqiqkkcyaaiyxozdvbpbnxhcsjkpuwp4kpwdwxqzrtb5r62afb5yq"
