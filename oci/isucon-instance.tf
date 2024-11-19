@@ -1,4 +1,4 @@
-resource "oci_core_instance" "isucon-1" {
+resource "oci_core_instance" "isucon-test" {
   async                      = null
   availability_domain        = "kbTA:AP-TOKYO-1-AD-1"
   capacity_reservation_id    = null
@@ -10,7 +10,7 @@ resource "oci_core_instance" "isucon-1" {
     "Oracle-Tags.CreatedBy" = "default/shion1305@gmail.com"
     "Oracle-Tags.CreatedOn" = "2024-11-19T16:09:56.687Z"
   }
-  display_name                        = "instance-20241120-0016"
+  display_name                        = "isucon-test"
   extended_metadata                   = {}
   fault_domain                        = "FAULT-DOMAIN-1"
   freeform_tags                       = {}
@@ -82,9 +82,8 @@ resource "oci_core_instance" "isucon-1" {
       "Oracle-Tags.CreatedBy" = "default/shion1305@gmail.com"
       "Oracle-Tags.CreatedOn" = "2024-11-19T16:09:56.836Z"
     }
-    display_name           = "instance-20241120-0016"
+    display_name           = "isucon-test"
     freeform_tags          = {}
-    hostname_label         = "instance-20241120-0016"
     nsg_ids                = []
     private_ip             = "10.0.0.193"
     skip_source_dest_check = false
