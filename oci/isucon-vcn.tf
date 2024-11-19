@@ -104,7 +104,7 @@ resource "oci_core_subnet" "isucon-default" {
   ipv6cidr_blocks            = []
   prohibit_internet_ingress  = false
   prohibit_public_ip_on_vnic = false
-  route_table_id             = oci_core_route_table.main-route-table.id
+  route_table_id             = oci_core_route_table.isucon-routing-table.id
   security_list_ids          = [oci_core_security_list.isucon-security-list.id]
   vcn_id                     = oci_core_vcn.isucon-vcn.id
 }
