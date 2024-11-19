@@ -22,3 +22,8 @@ import {
   id = "ocid1.routetable.oc1.ap-tokyo-1.aaaaaaaasqpv5qbidqr5la7vjkkp373a3xfkd3gaxa2cikza7lxzggdf7s5q"
   to = oci_core_route_table.isucon-routing-table
 }
+
+import {
+  id = "ocid1.internetgateway.oc1.ap-tokyo-1.aaaaaaaajocfwjmmeuqidterycq6fzkpgdmo3ifwricks3fayzo2uladuu5q"
+  to = oci_core_internet_gateway.isucon-internet-gateway
+}

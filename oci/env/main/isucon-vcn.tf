@@ -118,4 +118,9 @@ resource "oci_core_route_table" "isucon-routing-table" {
   display_name  = "Default Route Table for isucon"
   freeform_tags = {}
   vcn_id        = oci_core_vcn.isucon-vcn.id
+  route_rules {
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+    network_entity_id = oci_core_internet_gateway.isucon-internet-gateway.id
+  }
 }
