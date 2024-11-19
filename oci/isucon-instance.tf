@@ -105,7 +105,6 @@ resource "oci_core_instance" "isucon-1" {
   shape_config {
     baseline_ocpu_utilization = null
     memory_in_gbs             = 6
-    nvmes                     = 0
     ocpus                     = 1
     vcpus                     = 1
   }
