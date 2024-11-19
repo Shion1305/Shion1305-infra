@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'oci/**'
   workflow_dispatch:
 jobs:
   run-terragrunt-apply:
