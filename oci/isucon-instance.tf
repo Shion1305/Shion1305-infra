@@ -108,7 +108,7 @@ resource "oci_core_instance" "isucon-test" {
     vcpus                     = 1
   }
   source_details {
-    boot_volume_size_in_gbs         = jsonencode(47)
+    boot_volume_size_in_gbs         = jsonencode(50)
     boot_volume_vpus_per_gb         = jsonencode(10)
     is_preserve_boot_volume_enabled = false
     kms_key_id                      = null
