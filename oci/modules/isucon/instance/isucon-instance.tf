@@ -6,10 +6,6 @@ resource "oci_core_instance" "isucon-instance" {
   compartment_id             = var.compartment-id
   compute_cluster_id         = null
   dedicated_vm_host_id       = null
-  defined_tags = {
-    "Oracle-Tags.CreatedBy" = "default/shion1305@gmail.com"
-    "Oracle-Tags.CreatedOn" = "2024-11-19T16:09:56.687Z"
-  }
   display_name                        = var.name
   extended_metadata                   = {}
   fault_domain                        = "FAULT-DOMAIN-1"
@@ -23,7 +19,6 @@ resource "oci_core_instance" "isucon-instance" {
   preserve_boot_volume                    = null
   preserve_data_volumes_created_at_launch = null
   shape                                   = "VM.Standard.A1.Flex"
-  state                                   = "RUNNING"
   update_operation_constraint             = null
   agent_config {
     are_all_plugins_disabled = false
@@ -78,14 +73,9 @@ resource "oci_core_instance" "isucon-instance" {
     assign_ipv6ip             = false
     assign_private_dns_record = false
     assign_public_ip          = jsonencode(true)
-    defined_tags = {
-      "Oracle-Tags.CreatedBy" = "default/shion1305@gmail.com"
-      "Oracle-Tags.CreatedOn" = "2024-11-19T16:09:56.836Z"
-    }
     display_name           = var.name
     freeform_tags          = {}
     nsg_ids                = []
-    private_ip             = "10.0.0.193"
     skip_source_dest_check = false
     subnet_id              = var.subnet_id
     vlan_id                = null
