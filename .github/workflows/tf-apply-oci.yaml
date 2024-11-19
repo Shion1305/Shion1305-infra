@@ -18,6 +18,7 @@ jobs:
       TF_VAR_oci_tenancy: ${{ secrets.OCI_TENANCY }}
       TF_VAR_oci_fingerprint: ${{ secrets.OCI_FINGERPRINT }}
       TF_VAR_oci_region: ${{ secrets.OCI_REGION }}
+      TF_VAR_oci_private_key_path: ${{ github.workspace }}/oci/private_key.pem
     steps:
       - uses: actions/checkout@v4
       - uses: 'google-github-actions/auth@v2'
@@ -32,12 +33,9 @@ jobs:
         with:
           aqua_version: v2.35.0
       - name: Terragrunt Init
-        working-directory: ./oci
         run: terragrunt init
-      - name: Terragrunt Plan
-        working-directory: ./oci
+      - name: Terragrunt Apply
         env:
-          TF_VAR_oci_private_key_path: ./private_key.pem
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod 755 $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
