@@ -23,3 +23,9 @@ variable "ssh_keys" {
   type        = string
   description = "SSH keys"
 }
+
+variable "user_data" {
+  type        = string
+  description = "User data or cloud-init"
+  default     = null
+}
