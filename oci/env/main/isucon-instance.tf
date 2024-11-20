@@ -4,6 +4,7 @@ module "isu1" {
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
   ssh_keys       = var.isucon-ssh-keys
+  user_data      = file("../../modules/isucon/instance/cloud-init/isucon11q.cfg")
 }
 
 module "isu2" {
