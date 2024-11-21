@@ -1,5 +1,5 @@
-module "private-isu" {
-  name           = "private-isu"
+module "private-isu1" {
+  name           = "private-isu1"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
