@@ -70,17 +70,6 @@ resource "oci_core_instance" "isucon-instance" {
     is_live_migration_preferred = true
     recovery_action             = "RESTORE_INSTANCE"
   }
-  create_vnic_details {
-    assign_ipv6ip             = false
-    assign_private_dns_record = false
-    assign_public_ip = jsonencode(true)
-    freeform_tags = {}
-    nsg_ids = []
-    skip_source_dest_check    = false
-    subnet_id                 = var.subnet_id
-    vlan_id                   = null
-    private_ip                = var.private_ip
-  }
   instance_options {
     are_legacy_imds_endpoints_disabled = false
   }
@@ -105,4 +94,29 @@ resource "oci_core_instance" "isucon-instance" {
     source_id                       = var.source_id
     source_type                     = "image"
   }
+  create_vnic_details {
+    subnet_id              = var.subnet_id
+    display_name           = var.name
+    assign_public_ip       = false
+    skip_source_dest_check = true
+    # private_ip             = var.private_ip
+  }
+}
+
+
+data "oci_core_vnic_attachments" "vnic_attachments" {
+  compartment_id = var.compartment-id
+  depends_on = [
+    oci_core_instance.isucon-instance
+  ]
+  instance_id = oci_core_instance.isucon-instance.id
+}
+
+data "oci_core_vnic" "instance_primary_vnic" {
+  vnic_id = lookup(data.oci_core_vnic_attachments.vnic_attachments.vnic_attachments[0], "vnic_id")
+}
+
+data "oci_core_private_ips" "private_ips" {
+  subnet_id = var.subnet_id
+  vnic_id   = data.oci_core_vnic.instance_primary_vnic.id
 }
