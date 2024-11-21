@@ -8,7 +8,7 @@ module "private-isu" {
 }
 
 module "private-isu2" {
-  name           = "isucon10q-updated"
+  name           = "private-isu2"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
@@ -16,7 +16,7 @@ module "private-isu2" {
 }
 
 module "private-isu-bench" {
-  name           = "isucon11q"
+  name           = "private-isu-bench"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
