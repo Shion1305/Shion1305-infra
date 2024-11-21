@@ -3,7 +3,7 @@ resource "oci_core_public_ip" "isu-1" {
   display_name   = "isu-public-ip-1"
   freeform_tags = {}
   lifetime       = "RESERVED"
-  private_ip_id  = module.private-isu.private_ip_id
+  private_ip_id  = module.private-isu1.private_ip_id
 }
 
 resource "oci_core_public_ip" "isu-2" {
