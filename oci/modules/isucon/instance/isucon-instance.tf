@@ -74,7 +74,6 @@ resource "oci_core_instance" "isucon-instance" {
     assign_ipv6ip             = false
     assign_private_dns_record = false
     assign_public_ip = jsonencode(true)
-    display_name              = var.name
     freeform_tags = {}
     nsg_ids = []
     skip_source_dest_check    = false
@@ -89,7 +88,6 @@ resource "oci_core_instance" "isucon-instance" {
     boot_volume_type                    = "PARAVIRTUALIZED"
     firmware                            = "UEFI_64"
     is_consistent_volume_naming_enabled = true
-    is_pv_encryption_in_transit_enabled = true
     network_type                        = "PARAVIRTUALIZED"
     remote_data_volume_type             = "PARAVIRTUALIZED"
   }
