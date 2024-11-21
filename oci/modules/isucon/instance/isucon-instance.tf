@@ -80,6 +80,7 @@ resource "oci_core_instance" "isucon-instance" {
     skip_source_dest_check    = false
     subnet_id                 = var.subnet_id
     vlan_id                   = null
+    private_ip                = var.private_ip
   }
   instance_options {
     are_legacy_imds_endpoints_disabled = false

@@ -29,3 +29,9 @@ variable "user_data" {
   description = "User data or cloud-init"
   default     = null
 }
+
+variable "private_ip" {
+  type        = string
+  description = "Private IP"
+  default     = null
+}
