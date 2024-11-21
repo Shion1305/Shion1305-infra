@@ -1,20 +1,21 @@
 resource "oci_core_instance" "isucon-instance" {
-  async                      = null
-  availability_domain        = "kbTA:AP-TOKYO-1-AD-1"
-  capacity_reservation_id    = null
-  cluster_placement_group_id = null
-  compartment_id             = var.compartment-id
-  compute_cluster_id         = null
-  dedicated_vm_host_id       = null
+  async                               = null
+  availability_domain                 = "kbTA:AP-TOKYO-1-AD-1"
+  capacity_reservation_id             = null
+  cluster_placement_group_id          = null
+  compartment_id                      = var.compartment-id
+  compute_cluster_id                  = null
+  dedicated_vm_host_id                = null
   display_name                        = var.name
-  extended_metadata                   = {}
+  extended_metadata = {}
   fault_domain                        = "FAULT-DOMAIN-1"
-  freeform_tags                       = {}
+  freeform_tags = {}
   instance_configuration_id           = null
   ipxe_script                         = null
   is_pv_encryption_in_transit_enabled = null
   metadata = {
     ssh_authorized_keys = var.ssh_keys
+    user_data           = var.user_data
   }
   preserve_boot_volume                    = null
   preserve_data_volumes_created_at_launch = null
@@ -72,13 +73,13 @@ resource "oci_core_instance" "isucon-instance" {
   create_vnic_details {
     assign_ipv6ip             = false
     assign_private_dns_record = false
-    assign_public_ip          = jsonencode(true)
-    display_name           = var.name
-    freeform_tags          = {}
-    nsg_ids                = []
-    skip_source_dest_check = false
-    subnet_id              = var.subnet_id
-    vlan_id                = null
+    assign_public_ip = jsonencode(true)
+    freeform_tags = {}
+    nsg_ids = []
+    skip_source_dest_check    = false
+    subnet_id                 = var.subnet_id
+    vlan_id                   = null
+    private_ip                = var.private_ip
   }
   instance_options {
     are_legacy_imds_endpoints_disabled = false
@@ -87,7 +88,6 @@ resource "oci_core_instance" "isucon-instance" {
     boot_volume_type                    = "PARAVIRTUALIZED"
     firmware                            = "UEFI_64"
     is_consistent_volume_naming_enabled = true
-    is_pv_encryption_in_transit_enabled = true
     network_type                        = "PARAVIRTUALIZED"
     remote_data_volume_type             = "PARAVIRTUALIZED"
   }
@@ -98,8 +98,8 @@ resource "oci_core_instance" "isucon-instance" {
     vcpus                     = 1
   }
   source_details {
-    boot_volume_size_in_gbs         = jsonencode(50)
-    boot_volume_vpus_per_gb         = jsonencode(10)
+    boot_volume_size_in_gbs = jsonencode(50)
+    boot_volume_vpus_per_gb = jsonencode(10)
     is_preserve_boot_volume_enabled = false
     kms_key_id                      = null
     source_id                       = var.source_id
