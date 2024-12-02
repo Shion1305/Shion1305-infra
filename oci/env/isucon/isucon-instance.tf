@@ -1,5 +1,5 @@
-module "private-isu1" {
-  name           = "private-isu1"
+module "private-isu1-1202" {
+  name           = "private-isu1-1202"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
@@ -8,8 +8,8 @@ module "private-isu1" {
   private_ip = "10.0.0.11"
 }
 
-module "private-isu2" {
-  name           = "private-isu2"
+module "private-isu2-1202" {
+  name           = "private-isu2-1202"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
@@ -17,8 +17,8 @@ module "private-isu2" {
   private_ip = "10.0.0.12"
 }
 
-module "private-isu-bench" {
-  name           = "private-isu-bench"
+module "private-isu-bench-1202" {
+  name           = "private-isu-bench-1202"
   source         = "../../modules/isucon/instance"
   compartment-id = oci_identity_compartment.main-compartment.id
   subnet_id      = oci_core_subnet.isucon-default.id
