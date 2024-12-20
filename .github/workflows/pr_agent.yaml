@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: PR Agent action step
         id: pr-agent
-        uses: Codium-ai/pr-agent@91bf3c0749c39ffb0e0bcba47f42102eeca45cdf # v0.25
+        uses: Shion1305/pr-agent@test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
