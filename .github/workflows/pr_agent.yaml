@@ -20,3 +20,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
           PR_DESCRIPTION.USE_DESCRIPTION_MARKERS: 'true'
+          config.model: 'o1'
