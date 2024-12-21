@@ -7,3 +7,9 @@ generate "provider" {
   if_exists = "overwrite"
   contents = file("../../provider/main/oci.tf")
 }
+
+generate "version" {
+  path      = "_version.tf"
+  if_exists = "overwrite"
+  contents = file("../../provider/main/version.tf")
+}
