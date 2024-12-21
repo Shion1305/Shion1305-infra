@@ -7,15 +7,6 @@ variable "oci_fingerprint" {}
 variable "oci_tenancy" {}
 variable "oci_private_key_path" {}
 
-terraform {
-  required_providers {
-    oci = {
-      source  = "oracle/oci"
-      version = "6.18.0"
-    }
-  }
-}
-
 provider "oci" {
   region           = var.oci_region
   tenancy_ocid     = var.oci_tenancy

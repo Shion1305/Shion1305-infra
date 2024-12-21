@@ -35,6 +35,7 @@ jobs:
       - name: Terragrunt Init
         run: terragrunt init
       - name: Terragrunt Apply
+        working-directory: ${{ github.workspace }}/oci/env
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
