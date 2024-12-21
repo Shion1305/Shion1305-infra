@@ -13,4 +13,7 @@ module "oci_compute_instance-2024" {
   fault_domain              = "FAULT-DOMAIN-1"
   availability_domain       = "kbTA:AP-TOKYO-1-AD-1"
   hostname_label            = "instance-2024-1"
+  image_id                  = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaax3arbzsjtoqovmp56hfba3q2qyxljbci6ejkuagmkjql6ej3mj6q"
+  kms_key_id                = oci_kms_key.main.id
+  preserve_boot_volume      = true
 }

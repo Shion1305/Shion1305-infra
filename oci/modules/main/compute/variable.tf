@@ -72,3 +72,19 @@ variable "hostname_label" {
   description = "The hostname label for the VNIC."
   default     = null
 }
+
+variable "image_id" {
+  type        = string
+  description = "The OCID of the image used to boot the instance"
+}
+
+variable "preserve_boot_volume" {
+  type        = bool
+  description = "Whether to preserve the boot volume when terminating the instance."
+  default     = false
+}
+
+variable "kms_key_id" {
+  type        = string
+  description = "The OCID of the KMS key to use as the master encryption key for the boot volume."
+}
