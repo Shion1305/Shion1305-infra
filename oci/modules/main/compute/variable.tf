@@ -66,3 +66,9 @@ variable "assign_private_dns_record" {
   description = "Whether to assign a private DNS record to the instance."
   default     = true
 }
+
+variable "hostname_label" {
+  type        = string
+  description = "The hostname label for the VNIC."
+  default     = null
+}

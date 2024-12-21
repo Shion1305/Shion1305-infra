@@ -13,7 +13,7 @@ output "instance_private_ip" {
   description = "The private IP address of the EC2 instance"
 }
 
-output "instance_dns_name" {
-  value       = oci_core_instance.this.hostname_label
+output "instance_hostname" {
+  value       = oci_core_instance.this.create_vnic_details.hostname_label
   description = "The DNS name of the EC2 instance"
 }

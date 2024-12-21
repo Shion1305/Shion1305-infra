@@ -12,4 +12,5 @@ module "oci_compute_instance-2024" {
   shape                     = "VM.Standard.A1.Flex"
   fault_domain              = "FAULT-DOMAIN-1"
   availability_domain       = "kbTA:AP-TOKYO-1-AD-1"
+  hostname_label            = "instance-2024-1"
 }
