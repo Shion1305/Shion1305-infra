@@ -6,7 +6,7 @@ resource "oci_kms_vault" "main" {
 
 resource "oci_kms_key" "main" {
   compartment_id = oci_identity_compartment.main-compartment.id
-  display_name   = "main_key"
+  display_name   = "main_key_aes"
   key_shape {
     #Required
     algorithm = "AES"
