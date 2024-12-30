@@ -4,9 +4,9 @@ resource "oci_core_security_list" "main-security-list" {
     "Oracle-Tags.CreatedBy" = "shion1305@gmail.com"
     "Oracle-Tags.CreatedOn" = "2021-11-10T01:32:16.204Z"
   }
-  display_name  = "Default Security List for vcn-20211110-1031"
+  display_name = "Default Security List for vcn-20211110-1031"
   freeform_tags = {}
-  vcn_id        = oci_core_vcn.main-vcn.id
+  vcn_id       = oci_core_vcn.main-vcn.id
   egress_security_rules {
     description      = null
     destination      = "0.0.0.0/0"
@@ -16,7 +16,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(1)
+    protocol = jsonencode(1)
     source      = "10.0.0.0/16"
     source_type = "CIDR_BLOCK"
     stateless   = false
@@ -27,7 +27,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(1)
+    protocol = jsonencode(1)
     source      = "0.0.0.0/0"
     source_type = "CIDR_BLOCK"
     stateless   = false
@@ -38,7 +38,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(6)
+    protocol = jsonencode(6)
     source      = "0.0.0.0/0"
     source_type = "CIDR_BLOCK"
     stateless   = false
@@ -49,7 +49,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(6)
+    protocol = jsonencode(6)
     source      = "0.0.0.0/0"
     source_type = "CIDR_BLOCK"
     stateless   = false
@@ -60,7 +60,7 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(6)
+    protocol = jsonencode(6)
     source      = "0.0.0.0/0"
     source_type = "CIDR_BLOCK"
     stateless   = false
@@ -71,13 +71,24 @@ resource "oci_core_security_list" "main-security-list" {
   }
   ingress_security_rules {
     description = null
-    protocol    = jsonencode(6)
+    protocol = jsonencode(6)
     source      = "0.0.0.0/0"
     source_type = "CIDR_BLOCK"
     stateless   = true
     tcp_options {
       max = 4914
       min = 4914
+    }
+  }
+  ingress_security_rules {
+    description = null
+    protocol = jsonencode(6)
+    source      = "0.0.0.0/0"
+    source_type = "CIDR_BLOCK"
+    stateless   = true
+    tcp_options {
+      max = 6443
+      min = 6443
     }
   }
 }
