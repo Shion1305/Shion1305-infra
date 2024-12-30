@@ -7,8 +7,8 @@ module "oci_compute_instance-2024" {
   assign_private_dns_record = true
   assign_public_ip          = true
   display_name              = "oci_compute_instance-2024-1"
-  ocpus                     = 1
-  memory_in_gbs             = 6
+  ocpus                     = 2
+  memory_in_gbs             = 12
   shape                     = "VM.Standard.A1.Flex"
   fault_domain              = "FAULT-DOMAIN-1"
   availability_domain       = "kbTA:AP-TOKYO-1-AD-1"
