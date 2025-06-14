@@ -8,7 +8,6 @@ module "oci_compute_instance-ops" {
   assign_public_ip          = true
   display_name              = "oci_compute_instance-ops"
   ocpus                     = 3
-  vcpus                     = 3
   memory_in_gbs             = 18
   shape                     = "VM.Standard.A1.Flex"
   fault_domain              = "FAULT-DOMAIN-1"
