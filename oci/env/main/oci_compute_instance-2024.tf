@@ -1,4 +1,4 @@
-module "oci_compute_instance-ops" {
+module "oci_compute_instance-k8s" {
   source                    = "../../modules/main/compute"
   subnet_id                 = oci_core_subnet.main-subnet.id
   private_ip                = "10.0.0.20"
@@ -6,7 +6,7 @@ module "oci_compute_instance-ops" {
   ssh_authorized_keys       = var.ssh_keys
   assign_private_dns_record = true
   assign_public_ip          = true
-  display_name              = "oci_compute_instance-ops"
+  display_name              = "oci_compute_instance-k8s"
   ocpus                     = 3
   memory_in_gbs             = 18
   shape                     = "VM.Standard.A1.Flex"
