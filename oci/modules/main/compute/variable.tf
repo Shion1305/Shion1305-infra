@@ -32,12 +32,6 @@ variable "shape" {
   default     = "VM.Standard.A1.Flex"
 }
 
-variable "vcpus" {
-  type        = number
-  description = "Number of vCPUs for the instance shape_config."
-  default     = 1
-}
-
 variable "ocpus" {
   type        = number
   description = "Number of OCPUs for the instance shape_config."
