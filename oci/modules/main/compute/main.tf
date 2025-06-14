@@ -25,7 +25,6 @@ resource "oci_core_instance" "this" {
     baseline_ocpu_utilization = null
     memory_in_gbs             = var.memory_in_gbs
     ocpus                     = var.ocpus
-    vcpus                     = var.vcpus
   }
 
   create_vnic_details {
