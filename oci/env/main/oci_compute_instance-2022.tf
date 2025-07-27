@@ -81,7 +81,7 @@ resource "oci_core_instance" "instance-2022" {
     display_name           = "instance-20220818-0447"
     freeform_tags          = {}
     hostname_label         = "instance-20220818-0447"
-    nsg_ids                = []
+    nsg_ids                = [oci_core_network_security_group.main-nsg.id]
     private_ip             = "10.0.0.34"
     skip_source_dest_check = false
     subnet_id              = oci_core_subnet.main-subnet.id

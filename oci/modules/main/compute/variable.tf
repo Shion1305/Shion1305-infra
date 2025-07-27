@@ -88,3 +88,9 @@ variable "kms_key_id" {
   type        = string
   description = "The OCID of the KMS key to use as the master encryption key for the boot volume."
 }
+
+variable "nsg_ids" {
+  type        = list(string)
+  description = "A list of Network Security Group OCIDs to associate with the VNIC."
+  default     = []
+}
