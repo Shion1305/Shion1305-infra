@@ -56,3 +56,69 @@ resource "oci_core_network_security_group_security_rule" "main-nsg-ingress-ssh" 
     }
   }
 }
+
+# Allow HTTPS (port 443) from anywhere
+resource "oci_core_network_security_group_security_rule" "main-nsg-ingress-https" {
+  network_security_group_id = oci_core_network_security_group.main-nsg.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  
+  tcp_options {
+    destination_port_range {
+      min = 443
+      max = 443
+    }
+  }
+}
+
+# Allow HTTP (port 80) from anywhere
+resource "oci_core_network_security_group_security_rule" "main-nsg-ingress-http" {
+  network_security_group_id = oci_core_network_security_group.main-nsg.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  
+  tcp_options {
+    destination_port_range {
+      min = 80
+      max = 80
+    }
+  }
+}
+
+# Allow TCP port 4914 from anywhere (stateless)
+resource "oci_core_network_security_group_security_rule" "main-nsg-ingress-4914" {
+  network_security_group_id = oci_core_network_security_group.main-nsg.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  stateless                 = true
+  
+  tcp_options {
+    destination_port_range {
+      min = 4914
+      max = 4914
+    }
+  }
+}
+
+# Allow TCP port 6443 from anywhere (stateless)
+resource "oci_core_network_security_group_security_rule" "main-nsg-ingress-6443" {
+  network_security_group_id = oci_core_network_security_group.main-nsg.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  stateless                 = true
+  
+  tcp_options {
+    destination_port_range {
+      min = 6443
+      max = 6443
+    }
+  }
+}
