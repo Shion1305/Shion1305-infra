@@ -35,6 +35,7 @@ resource "oci_core_instance" "this" {
     private_ip                = var.private_ip
     hostname_label            = var.hostname_label
     assign_private_dns_record = var.assign_private_dns_record
+    nsg_ids                   = var.nsg_ids
   }
 
   source_details {

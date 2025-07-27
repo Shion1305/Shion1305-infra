@@ -16,4 +16,5 @@ module "oci_compute_instance-k8s" {
   image_id                  = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaax3arbzsjtoqovmp56hfba3q2qyxljbci6ejkuagmkjql6ej3mj6q"
   kms_key_id                = null
   preserve_boot_volume      = true
+  nsg_ids                   = [oci_core_network_security_group.k8s-nsg.id]
 }

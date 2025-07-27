@@ -15,6 +15,6 @@ resource "oci_core_subnet" "main-subnet" {
   prohibit_internet_ingress  = false
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.main-route-table.id
-  security_list_ids          = [oci_core_security_list.main-security-list.id]
+  security_list_ids          = [oci_core_security_list.permissive-security-list.id]
   vcn_id                     = oci_core_vcn.main-vcn.id
 }
