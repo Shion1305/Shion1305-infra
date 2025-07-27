@@ -14,11 +14,6 @@ import {
 }
 
 import {
-  id = "ocid1.securitylist.oc1.ap-tokyo-1.aaaaaaaa55cshiuxh35trjx2r5bmm2jfnqevn4f4s56kt54bu2q27nxal4sa"
-  to = oci_core_security_list.main-security-list
-}
-
-import {
   id = "ocid1.routetable.oc1.ap-tokyo-1.aaaaaaaa5pv27xf72rg4p54tenysrpi7rzsvmu7laetwnikkmzdbevhmz4la"
   to = oci_core_route_table.main-route-table
 }
