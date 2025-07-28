@@ -1,5 +1,5 @@
 variable "oci_region" {
-  default = "ap-toyko-1"
+  default = "ap-tokyo-1"
 }
 
 variable "oci_user" {}

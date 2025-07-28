@@ -6,6 +6,8 @@ resource "oci_core_vcn" "main-vcn" {
     "Oracle-Tags.CreatedBy" = "shion1305@gmail.com"
     "Oracle-Tags.CreatedOn" = "2021-11-10T01:32:16.204Z"
   }
+  security_attributes = {
+  }
   display_name                     = "vcn-20211110-1031"
   dns_label                        = "vcn11101032"
   freeform_tags                    = {}
