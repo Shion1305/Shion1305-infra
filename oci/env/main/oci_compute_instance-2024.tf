@@ -1,7 +1,7 @@
 module "oci_compute_instance-k8s" {
   source                    = "../../modules/main/compute"
   subnet_id                 = oci_core_subnet.main-subnet.id
-  private_ip                = "10.0.0.20"
+  private_ip                = "10.0.7.20"
   compartment_id            = oci_identity_compartment.main-compartment.id
   ssh_authorized_keys       = var.ssh_keys
   assign_private_dns_record = true
