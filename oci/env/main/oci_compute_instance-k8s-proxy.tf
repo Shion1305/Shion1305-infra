@@ -13,8 +13,16 @@ module "oci_compute_instance-k8s-proxy" {
   fault_domain              = "FAULT-DOMAIN-1"
   availability_domain       = "kbTA:AP-TOKYO-1-AD-1"
   hostname_label            = "instance-k8s-proxy"
-  image_id                  = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaaewdrshfelq3fuqrzqtxszyqr3rctikgkzutr7uyiisatbfipfzsq"
+  image_id                  = data.oci_core_images.ubuntu_latest.images[0].id
   kms_key_id                = null
   preserve_boot_volume      = true
   nsg_ids                   = [oci_core_network_security_group.k8s-nsg.id]
+}
+
+data "oci_core_images" "ubuntu_latest" {
+  compartment_id = oci_identity_compartment.main-compartment.id
+  operating_system = "Canonical Ubuntu"
+  operating_system_version = "24.04"
+  sort_by = "TIMECREATED"
+  sort_order = "DESC"
 }
