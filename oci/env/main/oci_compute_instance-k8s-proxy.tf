@@ -25,4 +25,5 @@ data "oci_core_images" "ubuntu_latest" {
   operating_system_version = "24.04"
   sort_by = "TIMECREATED"
   sort_order = "DESC"
+  state = "AVAILABLE"
 }
