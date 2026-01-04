@@ -33,7 +33,7 @@ jobs:
       - name: save private key
         run: echo "${{ secrets.OCI_KEY_CONTENT }}" > ./oci/private_key.pem
       - name: Set up Aqua CLI
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: aquaproj/aqua-installer@v4.0.4
         with:
           aqua_version: v2.35.0
       - name: Terragrunt Init
