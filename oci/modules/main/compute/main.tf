@@ -4,7 +4,7 @@ resource "oci_core_instance" "this" {
   fault_domain         = var.fault_domain
   display_name         = var.display_name
   shape                = var.shape
-  preserve_boot_volume = var.preserve_boot_volume
+  preserve_boot_volume = true // this is always enabled to prevent data loss
   agent_config {
     are_all_plugins_disabled = false
     is_management_disabled   = false
@@ -39,9 +39,9 @@ resource "oci_core_instance" "this" {
   }
 
   source_details {
-    boot_volume_size_in_gbs = jsonencode(50)
-    boot_volume_vpus_per_gb = jsonencode(10)
-    is_preserve_boot_volume_enabled = false
+    boot_volume_size_in_gbs         = jsonencode(50)
+    boot_volume_vpus_per_gb         = jsonencode(10)
+    is_preserve_boot_volume_enabled = true // this is always enabled to prevent data loss
     source_id                       = var.image_id
     source_type                     = "image"
     kms_key_id                      = var.kms_key_id
@@ -49,5 +49,12 @@ resource "oci_core_instance" "this" {
 
   metadata = {
     ssh_authorized_keys = var.ssh_authorized_keys
+  }
+
+  lifecycle {
+    // prevent boot volume replaced by image change.
+    ignore_changes = [
+      source_details[0].source_id,
+    ]
   }
 }
