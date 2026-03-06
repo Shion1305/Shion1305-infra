@@ -1,3 +1,17 @@
+data "oci_core_volume_backup_policies" "predefined" {}
+
+locals {
+  predefined_backup_policies = {
+    for p in data.oci_core_volume_backup_policies.predefined.volume_backup_policies :
+    lower(p.display_name) => p.id
+  }
+}
+
+resource "oci_core_volume_backup_policy_assignment" "boot_volume_backup" {
+  asset_id  = oci_core_instance.this.boot_volume_id
+  policy_id = local.predefined_backup_policies["bronze"]
+}
+
 resource "oci_core_instance" "this" {
   compartment_id       = var.compartment_id
   availability_domain  = var.availability_domain
