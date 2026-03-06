@@ -17,3 +17,8 @@ output "hostname" {
   value       = oci_core_instance.this.create_vnic_details[0].hostname_label
   description = "The DNS name of the EC2 instance"
 }
+
+output "availability_domain" {
+  value       = oci_core_instance.this.availability_domain
+  description = "The availability domain of the instance"
+}
