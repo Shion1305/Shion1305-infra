@@ -26,5 +26,5 @@ data "oci_core_images" "ubuntu_latest" {
   sort_by                  = "TIMECREATED"
   sort_order               = "DESC"
   state                    = "AVAILABLE"
-  shape                    = module.oci_compute_instance-k8s.shape
+  shape                    = "VM.Standard.A1.Flex"
 }
