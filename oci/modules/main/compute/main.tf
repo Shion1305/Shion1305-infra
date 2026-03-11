@@ -1,3 +1,22 @@
+resource "oci_core_volume_backup_policy" "weekly" {
+  compartment_id = var.compartment_id
+  display_name   = "${var.display_name}-weekly-backup"
+
+  schedules {
+    backup_type       = "INCREMENTAL"
+    period            = "ONE_WEEK"
+    retention_seconds = 3 * 7 * 24 * 60 * 60 # 3 weeks = 3 revisions
+    time_zone         = "UTC"
+    day_of_week       = "SUNDAY"
+    hour_of_day       = 0
+  }
+}
+
+resource "oci_core_volume_backup_policy_assignment" "boot_volume_backup" {
+  asset_id  = oci_core_instance.this.boot_volume_id
+  policy_id = oci_core_volume_backup_policy.weekly.id
+}
+
 resource "oci_core_instance" "this" {
   compartment_id       = var.compartment_id
   availability_domain  = var.availability_domain
