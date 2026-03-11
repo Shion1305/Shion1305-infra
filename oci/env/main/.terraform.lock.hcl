@@ -2,8 +2,7 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/oci" {
-  version     = "8.5.0"
-  constraints = "8.5.0"
+  version = "8.5.0"
   hashes = [
     "h1:YGSTTLRk0vpD4P0dJFt2lZ2XphT2skF9AxBGCkM04z4=",
     "zh:0289ba575d3749068fc12fdbfa3f44b9780b21a23315eb2ca5bcf73065cc4fe7",
