@@ -13,3 +13,9 @@ generate "version" {
   if_exists = "overwrite"
   contents  = file("../../provider/main/version.tf")
 }
+
+generate "compute_version" {
+  path      = "../../modules/main/compute/_version.tf"
+  if_exists = "overwrite"
+  contents  = file("../../provider/main/version.tf")
+}
