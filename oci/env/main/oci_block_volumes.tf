@@ -6,7 +6,7 @@ resource "oci_core_volume" "k8s-block-volume" {
   vpus_per_gb         = 0
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
