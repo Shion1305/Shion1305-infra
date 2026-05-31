@@ -38,11 +38,11 @@ jobs:
         with:
           aqua_version: v2.59.1
       - name: Terragrunt Init
-        run: terragrunt run-all init -upgrade --terragrunt-non-interactive
+        run: terragrunt run --all --non-interactive -- init -upgrade
       - name: Terragrunt Plan
         working-directory: ${{ github.workspace }}/oci/env
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod 755 $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
-          terragrunt run-all plan --terragrunt-non-interactive --terragrunt-tfpath $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
+          terragrunt run --all --non-interactive --tf-path $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh -- plan
