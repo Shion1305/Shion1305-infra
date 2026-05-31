@@ -10,6 +10,7 @@ on:
     paths:
       - 'oci/**'
       - '.github/workflows/tf-plan-oci.yaml'
+  workflow_dispatch:
 jobs:
   run-terragrunt-plan:
     runs-on: ubuntu-latest
