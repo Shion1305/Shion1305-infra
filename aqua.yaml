@@ -11,5 +11,5 @@ registries:
   ref: v4.480.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: hashicorp/terraform@v1.9.5
-- name: gruntwork-io/terragrunt@v0.67.14
+- name: gruntwork-io/terragrunt@v0.99.5
 - name: suzuki-shunsuke/tfcmt@v4.14.15
