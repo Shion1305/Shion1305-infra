@@ -45,4 +45,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod 755 $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
-          terragrunt run-all plan --terragrunt-non-interactive --terragrunt-tfpath $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh
+          terragrunt run --all --non-interactive --tf-path $GITHUB_WORKSPACE/.github/scripts/tfwrapper.sh -- plan

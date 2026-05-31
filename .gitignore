@@ -3,3 +3,4 @@
 *.tfvars
 _*.tf
 .DS_Store
+.terragrunt-cache
