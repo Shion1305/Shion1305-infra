@@ -38,7 +38,7 @@ jobs:
         with:
           aqua_version: v2.59.1
       - name: Terragrunt Init
-        run: terragrunt run-all init -upgrade --terragrunt-non-interactive
+        run: terragrunt run --all --non-interactive -- init -upgrade
       - name: Terragrunt Plan
         working-directory: ${{ github.workspace }}/oci/env
         env:
